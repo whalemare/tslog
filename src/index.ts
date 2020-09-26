@@ -3,8 +3,7 @@
  * @packageDocumentation
  */
 
-import { hostname } from "os";
-import { normalize as fileNormalize } from "path";
+import fileNormalize from "normalize-path";
 import { inspect, format } from "util";
 import { wrapCallSite } from "source-map-support";
 
@@ -31,6 +30,10 @@ import {
 } from "./interfaces";
 import { LoggerHelper } from "./LoggerHelper";
 import { InspectOptions } from "util";
+
+function hostname() {
+  return "react-native";
+}
 
 export {
   ILogLevel,
